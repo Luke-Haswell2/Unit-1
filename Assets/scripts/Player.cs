@@ -8,11 +8,12 @@ public class Player : MonoBehaviour
     bool touchingPlatform;
     public GameObject Bullet;
     SpriteRenderer sr;
-
+    HelperScript helper;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        helper = gameObject.AddComponent<HelperScript>();
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey("left"))
         {
             rb.velocity = new Vector2(-3, rb.velocity.y);
+            helper.FlipObject(true);
         }
         if (Input.GetKeyDown("up") && touchingPlatform)
         {

@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class HelperScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void FlipObject(bool flip)
     {
-        
+        // get the SpriteRenderer component
+        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+
+        if (flip == true)
+        {
+            sr.flipX = true;
+        }
+        else
+        {
+            sr.flipX = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
