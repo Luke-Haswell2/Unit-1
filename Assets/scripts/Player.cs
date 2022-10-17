@@ -7,12 +7,12 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     bool touchingPlatform;
     public GameObject Bullet;
+    SpriteRenderer sr;
 
-    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -20,20 +20,22 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey("right"))
         {
-            rb.velocity = new Vector2(3,rb.velocity.y);
+            rb.velocity = new Vector2(3, rb.velocity.y);
         }
         if (Input.GetKey("left"))
         {
-            rb.velocity = new Vector2(-3,rb.velocity.y);
+            rb.velocity = new Vector2(-3, rb.velocity.y);
         }
         if (Input.GetKeyDown("up") && touchingPlatform)
         {
             rb.velocity = new Vector2(0, 8);
+            
         }
 
         int moveDirection = 1;
         if (Input.GetKeyDown("down"))
         {
+            
             GameObject clone;
             clone = Instantiate(Bullet, transform.position, transform.rotation);
 
@@ -42,8 +44,13 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector3(15 * moveDirection, 0, 0);
 
             rb.transform.position = new Vector3(transform.position.x + 1, transform.position.y + 0, transform.position.z);
+
+            sr.color = Color.yellow;
+            
         }
+        
     }
+
     void OnCollisionStay2D(Collision2D collision)
     {
 
@@ -58,6 +65,14 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Platform")
         {
             touchingPlatform = false;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            
+            Destroy(gameObject);
         }
     }
 }
