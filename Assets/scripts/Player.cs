@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
             rb.transform.position = new Vector3(transform.position.x + 1, transform.position.y + 0, transform.position.z);
 
-            sr.color = Color.yellow;
+            
             
         }
         
