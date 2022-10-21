@@ -20,7 +20,7 @@ public class Camera : MonoBehaviour
         
        if (Player.transform.position.x > transform.position.x-4)
         {
-            rb.velocity = new Vector2(2, 0);
+            rb.velocity = new Vector2(2.5f, 0);
         }
         else
         {
@@ -29,7 +29,7 @@ public class Camera : MonoBehaviour
         
         if (Player.transform.position.x < transform.position.x - 4.1)
         {
-            rb.velocity = new Vector2(-2, 0);
+            rb.velocity = new Vector2(-2.5f, 0);
         }
     }
 }
