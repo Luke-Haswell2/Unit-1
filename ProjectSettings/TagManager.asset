@@ -47,6 +47,9 @@ TagManager:
   - name: buildings
     uniqueID: 1553282479
     locked: 0
+  - name: trail
+    uniqueID: 3200548983
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
