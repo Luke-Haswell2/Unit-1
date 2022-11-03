@@ -31,9 +31,9 @@ public class Camera : MonoBehaviour
         {
             rb.velocity = new Vector2(-2.5f, 0);
         }
-        if (Player.transform.position.x > 74)
+        //if (Player.transform.position.x > 74)
         {
-            rb.velocity = new Vector2(0, 0);
+            //rb.velocity = new Vector2(0, 0);
         }
         
     }
