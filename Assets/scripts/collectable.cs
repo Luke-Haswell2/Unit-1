@@ -16,7 +16,7 @@ public class Collectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // create radio and make script delete player when they collect radio and spawn end of game text
+        
         
 
     }
